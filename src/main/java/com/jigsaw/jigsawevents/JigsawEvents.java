@@ -1,5 +1,6 @@
 package com.jigsaw.jigsawevents;
 
+import com.jigsaw.jigsawevents.items.ItemInit;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
@@ -44,6 +45,7 @@ public class JigsawEvents
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
+        ItemInit.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
